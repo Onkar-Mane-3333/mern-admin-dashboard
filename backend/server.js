@@ -28,6 +28,10 @@ app.use(express.json()); //This middleware lets Express read JSON data from the 
 
 app.use("/", authRoutes);  //“Use all routes defined inside authRoutes starting from /.”
 
+app.get("/", (req, res) => {
+  res.send("Backend is running");
+});
+
 app.get("/dashboard", verifyToken, (req, res) => {
   res.json({ message: "Dashboard", user: req.user });
 });
