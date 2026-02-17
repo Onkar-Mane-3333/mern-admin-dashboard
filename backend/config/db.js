@@ -3,8 +3,8 @@
 const mongoose = require("mongoose");
 
 function connectDB() {
-  mongoose.connect("mongodb://127.0.0.1:27017/auth_demo")
-    .then(() => console.log("MongoDB connected"))
+  mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log("MongoDB Atlas connected"))
     .catch(err => console.log(err));
 }
 
