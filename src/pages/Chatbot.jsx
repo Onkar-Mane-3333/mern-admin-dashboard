@@ -27,7 +27,7 @@ function Chatbot() {
 
         setMessages(prev => [...prev,userMessage]);
 
-        const res = await fetch("http://localhost:5000/chat",{
+        const res = await fetch("https://mern-admin-dashboard-5xlx.onrender.com/chat",{
             method: "POST",
             headers:{
                 "content-type": "application/json",

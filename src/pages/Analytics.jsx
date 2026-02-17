@@ -7,7 +7,7 @@ function Analytics() {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/users", {
+    fetch("https://mern-admin-dashboard-5xlx.onrender.com/users", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -36,7 +36,7 @@ function Analytics() {
    function getAIInsight(data) {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/ai-insight", {
+    fetch("https://mern-admin-dashboard-5xlx.onrender.com/ai-insight", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

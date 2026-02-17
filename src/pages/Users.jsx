@@ -31,7 +31,7 @@ function Users() {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/users", {
+    fetch("https://mern-admin-dashboard-5xlx.onrender.com/users", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -52,7 +52,7 @@ function Users() {
 
   const token = localStorage.getItem("token");
 
-  fetch(`http://localhost:5000/users/${id}`, {
+  fetch(`https://mern-admin-dashboard-5xlx.onrender.com/users/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -68,7 +68,7 @@ function Users() {
   function handleUpdateUser(id) {
     const token = localStorage.getItem("token");
 
-    fetch(`http://localhost:5000/users/${id}`, {
+    fetch(`https://mern-admin-dashboard-5xlx.onrender.com/users/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

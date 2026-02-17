@@ -68,7 +68,7 @@ function Login() {
 
   async function handleLogin() {
     try {
-      const res = await fetch("http://localhost:5000/login", {
+      const res = await fetch("https://mern-admin-dashboard-5xlx.onrender.com/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

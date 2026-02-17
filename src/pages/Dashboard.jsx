@@ -44,7 +44,7 @@ function Dashboard() {
 // headers
 // body
 // res.ok is true if status is 200–299.
-  fetch("http://localhost:5000/dashboard", {
+  fetch("https://mern-admin-dashboard-5xlx.onrender.com/dashboard", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -59,7 +59,7 @@ function Dashboard() {
       navigate("/login");
     });
 
-    fetch("http://localhost:5000/users", {
+    fetch("https://mern-admin-dashboard-5xlx.onrender.com/users", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -78,7 +78,7 @@ function Dashboard() {
   function handleDeleteUsers() {
   const token = localStorage.getItem("token");
 
-  fetch("http://localhost:5000/users", {
+  fetch("https://mern-admin-dashboard-5xlx.onrender.com/users", {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -92,7 +92,7 @@ function Dashboard() {
   function handleViewUsers() {
   const token = localStorage.getItem("token");
 
-  fetch("http://localhost:5000/users", {
+  fetch("https://mern-admin-dashboard-5xlx.onrender.com/users", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
