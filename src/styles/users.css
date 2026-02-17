@@ -1,0 +1,96 @@
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.users-table th,
+.users-table td {
+  padding: 12px;
+  border-bottom: 1px solid #333;
+  text-align: left;
+}
+
+.users-table th {
+  background-color: #111827;
+}
+
+.users-table tr:hover {
+  background-color: #1f2937;
+}
+
+/* .users-table button {
+  padding: 6px 12px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+} */
+
+/* Table buttons */
+.users-table button {
+  padding: 6px 12px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Edit button */
+.edit-btn {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* Save button */
+.save-btn {
+  background-color: #10b981;
+  color: white;
+}
+
+/* Cancel button */
+.cancel-btn {
+  background-color: #6b7280;
+  color: white;
+}
+
+/* Delete button */
+.delete-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+/* Hover effect */
+.users-table button:hover {
+  opacity: 0.9;
+}
+
+.users-table td {
+  vertical-align: middle;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #374151;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* @keyframes is used to define an animation in CSS  Here, the animation name is: spin*/
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

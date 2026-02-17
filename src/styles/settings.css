@@ -1,0 +1,20 @@
+.settings-card {
+  background: #0f172a;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.settings-card h3 {
+  margin-bottom: 10px;
+}
+
+.settings-card input,
+.settings-card select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  background: #020617;
+  border: 1px solid #1f2937;
+  color: white;
+}
