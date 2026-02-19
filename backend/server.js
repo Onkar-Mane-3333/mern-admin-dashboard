@@ -10,7 +10,7 @@ connectDB();
 
 
 const axios = require("axios");
-
+const bcrypt = require("bcryptjs");
 
 const express = require("express");
 const cors = require("cors");
@@ -80,6 +80,36 @@ app.delete(
     }
   }
 );
+
+app.post("/register", async (req, res) => {
+  try {
+    const { email, password, role } = req.body;
+
+    if (!email || !password || !role) {
+      return res.status(400).json({ message: "All fields required" });
+    }
+
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: "User already exists" });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = new User({
+      email,
+      password: hashedPassword,
+      role,
+    });
+
+    await newUser.save();
+
+    res.json({ message: "User registered successfully" });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "Server error" });
+  }
+});
 
 app.put(
   "/users/:id",

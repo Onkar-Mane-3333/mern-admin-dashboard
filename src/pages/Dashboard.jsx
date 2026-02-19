@@ -59,20 +59,24 @@ function Dashboard() {
       navigate("/login");
     });
 
+    if (decoded.role === "admin") {
     fetch("https://mern-admin-dashboard-5xlx.onrender.com/users", {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  })
-    .then(res => res.json())
-    .then(users => {
-      setMetrics({
-        total: users.length,
-        admins: users.filter(u => u.role === "admin").length,
-        managers: users.filter(u => u.role === "manager").length,
-        users: users.filter(u => u.role === "user").length
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then(res => res.json())
+      .then(users => {
+        if (!Array.isArray(users)) return;
+
+        setMetrics({
+          total: users.length,
+          admins: users.filter(u => u.role === "admin").length,
+          managers: users.filter(u => u.role === "manager").length,
+          users: users.filter(u => u.role === "user").length
       });
     });
+  }
 }, [navigate]);
 
   function handleDeleteUsers() {
@@ -129,14 +133,17 @@ function Dashboard() {
         role → user’s role
         "admin" → value we are checking .. and ?. is a  Optional chaining is used to avoid errors when accessing nested properties that may not exist yet. Without it, your app can crash.*/}
       {data?.user?.role === "admin" && (
+        <>
         <NavLink to="users" className="nav-link">
           <Users size={18} /> Users
         </NavLink>
-      )}
+      
 
       <NavLink to="analytics" className="nav-link">
         Analytics
       </NavLink>
+      </>
+      )}
 
       <NavLink to="chat" className="nav-link">
         ChatBox

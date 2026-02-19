@@ -6,7 +6,7 @@ function Profile() {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:5000/dashboard", {
+    fetch("https://mern-admin-dashboard-5xlx.onrender.com/dashboard", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

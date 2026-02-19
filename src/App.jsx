@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import Register from "./pages/Register";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -30,6 +31,9 @@ function App() {
 
       {/* LOGIN */}
       <Route path="/login" element={<Login />} />
+
+      <Route path="/register" element={<Register />} />
+
 
       {/* REDIRECT */}
       <Route path="/home" element={<Navigate to="/users" />} />

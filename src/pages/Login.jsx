@@ -113,6 +113,11 @@ function Login() {
         <button className="login-button" onClick={handleLogin}>
           Login
         </button>
+
+        <p>
+          Don't have an account? <a href="/register">Register</a>
+        </p>
+
       </div>
     </div>
   );
