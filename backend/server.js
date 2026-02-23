@@ -23,7 +23,10 @@ const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
 
-app.use(cors());  //cors() allows frontend and backend to communicate.
+app.use(cors({
+  origin: "https://mern-admin-dashboard-git-main-onkars-projects-a7b76570.vercel.app",
+  credentials: true
+}));  //cors() allows frontend and backend to communicate.
 app.use(express.json()); //This middleware lets Express read JSON data from the request body.
 
 app.use("/", authRoutes);  //“Use all routes defined inside authRoutes starting from /.”
